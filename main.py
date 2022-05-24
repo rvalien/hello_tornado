@@ -7,9 +7,9 @@ class MainHandler(tornado.web.RequestHandler):
         self.write("Hello, world")
 
 
-class PostHandler(tornado.web.RequestHandler):
+class CompareHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("<h1>this is post 1 </h1>")
+        self.write("<h1>compare with fast-api <a href='https://codeahoy.com/compare/tornado-vs-fastapi'>here</a></h1>")
 
 
 class HomeHandler(tornado.web.RequestHandler):
@@ -28,7 +28,7 @@ class WeatherHandler(tornado.web.RequestHandler):
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
-        ("/post", PostHandler),
+        ("/compare", CompareHandler),
         ("/home", HomeHandler),
         ("/weather", WeatherHandler),
     ],
